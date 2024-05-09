@@ -19,7 +19,7 @@ class PostsController extends Controller
         $post->title = $request->title;
         $post->message = $request->message;
         $post->save();
-        return redirect()->route('posts.index');
+        return response()->json(['post' => $post]);
     }
 
     public function show(Request $request, $id)
